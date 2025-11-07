@@ -17,6 +17,11 @@ while opcao != '4':
 # Limpar o terminal no em multiplataforma (Windows, Linux e macOs)
 os.system('cls' if os.name == 'nt' else 'clear')
 
-# Eu estive aqui!
-
-# lçrfNajhsdjsd
+# Testando um 
+# Testando um 
+# Testando um 
+# Testando um 
+# Testando um 
+# Testando um 
+# Testando um 
+# Testando um 
