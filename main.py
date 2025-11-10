@@ -1,35 +1,67 @@
 import os
 
-produto = {} 
+produtos = []
+produto_id = 0
+
+# Funcção para exibir mensagem
+def exibirMensagem(texto):
+    print('*' * 40)
+    print(texto.upper())
+    print('*' * 40)
 
 # Função para cadastra roupa
 def novoCadastro():
-    global produto
+    global produtos, produto_id
     
     nome_fabricante = input('Digite o nome do fabricate: ')
     ano_fabricacao = input('Digite o ano de fabricação: ')
     qtds = input('Quantidade: ')
     
-    produto = {
-        'fabricante': nome_fabricante,
-        'ano_fabricante': ano_fabricacao,
+    # Incrementando o ID de identificação do registro
+    produto_id += 1
+    
+    produtos.insert(len(produtos), {
+        'id': produto_id,
+        'frabricante': nome_fabricante,
+        'ano_fabricacao': ano_fabricacao,
         'quantidade': qtds
-    }
+    })
     
 # *****
 
 # Função para lista os produtos cadastrados
 def listarProdutos():
-    global produto
+    global produtos
     
-    print(produto)
+    exibirMensagem('Produtos Cadastrado')
     
+    for produto in produtos:
+        for key in produto:
+            print(f'{key}: {produto[key]}')
+        
+        print('-' * 10)
+        
+# *****
+
+# Função para apagar produto
+def apagarProduto():
+    global produtos
+    
+    produto_id = int(input('Insira a ID de identificação do produto: '))
+    
+    for produto in produtos:
+        if produto['id'] == produto_id:
+            produtos.remove(produto)
+            print(f'Produto com ID {produto_id} removido com sucesso!')
+            break
+    else:
+        print('Produto não encontrado.')
+        
 # *****
 
 while True:
-    print('*' * 40)
-    print('Sistema de Cadastro de Roupas'.upper())
-    print('*' * 40)
+    exibirMensagem('Sistema de Cadastro de Roupas')
+    
     print('1 - Cadastrar Roupa')
     print('2 - Listar Roupa Cadastrada')
     print('3 - Apagar Cadastro')
@@ -45,7 +77,7 @@ while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         listarProdutos()
     elif opcao == '3':
-        pass
+        apagarProduto()
     elif opcao == '4':
         break
     else:
