@@ -77,8 +77,10 @@ while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         listarProdutos()
     elif opcao == '3':
+        os.system('cls' if os.name == 'nt' else 'clear')
         apagarProduto()
     elif opcao == '4':
+        os.system('cls' if os.name == 'nt' else 'clear')
         break
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
