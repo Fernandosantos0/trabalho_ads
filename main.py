@@ -33,7 +33,7 @@ def novoCadastro():
 def listarProdutos():
     global produtos
     
-    exibirMensagem('Produtos Cadastrado')
+    exibirMensagem('Produtos Cadastrados')
     
     for produto in produtos:
         for key in produto:
