@@ -22,7 +22,7 @@ def novoCadastro():
     
     produtos.insert(len(produtos), {
         'id': produto_id,
-        'frabricante': nome_fabricante,
+        'fabricante': nome_fabricante,
         'ano_fabricacao': ano_fabricacao,
         'quantidade': qtds
     })
