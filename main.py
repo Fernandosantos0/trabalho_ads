@@ -1,29 +1,28 @@
 import os
 
-produtos = []
+produto = {} 
 
 # Função para cadastra roupa
 def novoCadastro():
+    global produto
+    
     nome_fabricante = input('Digite o nome do fabricate: ')
     ano_fabricacao = input('Digite o ano de fabricação: ')
     qtds = input('Quantidade: ')
     
-    id_produto = len(produtos) + 1
-    if produtos[len(produtos) - 1] < 1:
-        id_produto = 1
-    
-    produtos.append({
-        'id': id_produto,
-        'frabricante': nome_fabricante,
-        'ano_frabricacao': ano_fabricacao,
+    produto = {
+        'fabricante': nome_fabricante,
+        'ano_fabricante': ano_fabricacao,
         'quantidade': qtds
-    })
+    }
     
 # *****
 
 # Função para lista os produtos cadastrados
 def listarProdutos():
-    print(produtos)
+    global produto
+    
+    print(produto)
     
 # *****
 
@@ -32,7 +31,7 @@ while True:
     print('Sistema de Cadastro de Roupas'.upper())
     print('*' * 40)
     print('1 - Cadastrar Roupa')
-    print('2 - Listar Roupas Cadastradas')
+    print('2 - Listar Roupa Cadastrada')
     print('3 - Apagar Cadastro')
     print('4 - Sair')
     
